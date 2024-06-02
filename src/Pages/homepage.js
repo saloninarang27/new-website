@@ -13,12 +13,6 @@ function Homepage() {
         return `${year}-${month}-${day}`;
     };
 
-    const getFormattedDate = (date) => {
-        const year = date.getFullYear();
-        const month = String(date.getMonth() + 1).padStart(2, '0');
-        const day = String(date.getDate()).padStart(2, '0');
-        return `${year}-${month}-${day}`;
-    };
 
     useEffect(() => {
         const formattedDate = getCurrentFormattedDate();
@@ -45,13 +39,7 @@ function Homepage() {
         fetchData();
     }, [d]);
 
-    const goToPreviousDay = () => {
-        const date = new Date(d);
-        date.setDate(date.getDate() - 1);
-        const formattedDate = getFormattedDate(date);
-        setD(formattedDate);
-    };
-
+    
     return (
         <div className="homepage">
             <div id="header">
